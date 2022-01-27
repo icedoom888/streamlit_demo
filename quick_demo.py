@@ -27,11 +27,11 @@ def load_data():
 data = load_data()
 countries = data.index
 
-sel_country = st.selectbox('Select a Country', countries)
-c_data = data.loc[sel_country]
+sel_countries = st.multiselect('Select a Country', countries)
+c_data = data.loc[sel_countries]
 
-with st.container():
-    # You can call any Streamlit command, including custom components:
-    st.area_chart(data=c_data)
+# mask = (df['CREATEDDATE'].dt.date > start_date) & (df['CREATEDDATE'].dt.date <= end_date)
+
+st.area_chart(data=c_data)
 
 
