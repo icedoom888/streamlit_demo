@@ -17,5 +17,9 @@ countries = data.index
 country = st.selectbox('Select a Country', countries)
 
 c_data = data.loc[country]
-st.write(c_data)
+with st.container():
+    st.write(f"Showing {country} population data")
+    # You can call any Streamlit command, including custom components:
+    st.area_chart(data=c_data)
+
 
