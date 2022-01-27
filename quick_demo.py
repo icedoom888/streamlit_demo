@@ -27,11 +27,11 @@ def load_data():
 data = load_data()
 countries = data.index
 
-country = st.selectbox('Select a Country', countries)
-c_data = data.loc[country]
+sel_countries = st.selectbox('Select some Countries', countries)
+c_data = data.loc[sel_countries]
 
 with st.container():
-    st.write(f"Showing {country} population data")
+    st.write(f"Showing {sel_countries} population data")
     # You can call any Streamlit command, including custom components:
     st.area_chart(data=c_data)
 
