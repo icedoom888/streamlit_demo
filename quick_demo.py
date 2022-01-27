@@ -28,10 +28,10 @@ def load_data():
 data = load_data()
 countries = data.index
 
-# sel_countries = st.multiselect('Select a Country', countries)
-sel_countries = ['Italy', 'Germany']
+sel_countries = st.multiselect('Select a Country', countries)
 c_data = data.loc[sel_countries].T
 c_data.index = c_data.index.map(int)
+
 st.area_chart(data=c_data)
 
 
