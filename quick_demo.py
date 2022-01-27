@@ -27,7 +27,7 @@ def load_data():
 data = load_data()
 countries = data.index
 
-sel_countries = st.selectbox('Select some Countries', countries)
+sel_countries = st.multiselect('Select some Countries', countries)
 c_data = data.loc[sel_countries]
 
 with st.container():
