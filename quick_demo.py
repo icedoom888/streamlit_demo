@@ -20,6 +20,7 @@ def convert_str_to_number(x):
 def load_data():
     df = pd.read_csv('population_total.csv')
     df = df.set_index('country')
+    df.index.name = None
     for country in df.index:
         df.loc[country] = df.loc[country].map(lambda x: convert_str_to_number(x))
     return df
@@ -27,11 +28,10 @@ def load_data():
 data = load_data()
 countries = data.index
 
-sel_countries = st.multiselect('Select a Country', countries)
-c_data = data.loc[sel_countries]
-
-# mask = (df['CREATEDDATE'].dt.date > start_date) & (df['CREATEDDATE'].dt.date <= end_date)
-
+# sel_countries = st.multiselect('Select a Country', countries)
+sel_countries = ['Italy', 'Germany']
+c_data = data.loc[sel_countries].T
+c_data.index = c_data.index.map(int)
 st.area_chart(data=c_data)
 
 
