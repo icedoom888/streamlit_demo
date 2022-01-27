@@ -1,7 +1,7 @@
 import streamlit as st
 import altair as alt
 import pandas as pd
-from vega_datasets import vd
+from vega_datasets import data as vd
 
 
 st.title('World Population')
