@@ -27,12 +27,12 @@ def load_data():
 data = load_data()
 countries = data.index
 
-sel_countries = st.multiselect('Select some Countries', countries)
-# sel_countries = ['Albania', 'Colombia']
-c_data = data.loc[sel_countries].transpose()
+# sel_countries = st.multiselect('Select some Countries', countries)
+sel_countries = ['Albania', 'Colombia']
+c_data = data.loc[sel_countries]
+c_data = c_data.T
 
 with st.container():
-    st.write(f"Showing {sel_countries} population data")
     # You can call any Streamlit command, including custom components:
     st.area_chart(data=c_data)
 
