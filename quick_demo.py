@@ -29,7 +29,7 @@ countries = data.index
 
 sel_countries = st.multiselect('Select some Countries', countries)
 # sel_countries = ['Albania', 'Colombia']
-c_data = data.loc[sel_countries]
+c_data = data.loc[sel_countries].transpose()
 
 with st.container():
     st.write(f"Showing {sel_countries} population data")
