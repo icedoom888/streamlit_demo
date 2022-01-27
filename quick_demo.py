@@ -29,7 +29,6 @@ countries = data.index
 
 sel_country = st.selectbox('Select a Country', countries)
 c_data = data.loc[sel_country]
-c_data = c_data
 
 with st.container():
     # You can call any Streamlit command, including custom components:
