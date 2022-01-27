@@ -33,6 +33,6 @@ c_data = data.loc[country]
 with st.container():
     st.write(f"Showing {country} population data")
     # You can call any Streamlit command, including custom components:
-    st.area_chart(data=c_data, height=10, width=20)
+    st.area_chart(data=c_data)
 
 
