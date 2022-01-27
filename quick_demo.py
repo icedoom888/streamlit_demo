@@ -27,10 +27,9 @@ def load_data():
 data = load_data()
 countries = data.index
 
-# sel_countries = st.multiselect('Select some Countries', countries)
-sel_countries = ['Albania', 'Colombia']
-c_data = data.loc[sel_countries]
-c_data = c_data.T
+sel_country = st.selectbox('Select a Country', countries)
+c_data = data.loc[sel_country]
+c_data = c_data
 
 with st.container():
     # You can call any Streamlit command, including custom components:
