@@ -32,6 +32,6 @@ sel_countries = st.multiselect('Select a Country', countries)
 c_data = data.loc[sel_countries].T
 c_data.index = c_data.index.map(int)
 
-st.area_chart(data=c_data)
+st.line_chart(data=c_data)
 
 
