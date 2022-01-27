@@ -27,7 +27,7 @@ def load_data():
 
 data = load_data()
 countries = data.index
-year = st.slider('Pick a year', min_value=min(int(data.T.index)), max_value=max(int(data.T.index)))
+year = st.slider('Pick a year', min_value=min(int(data.T.index.tolist())), max_value=max(int(data.T.index.tolist())))
 
 y_data = data.loc[:, year]
 
