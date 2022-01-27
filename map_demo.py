@@ -50,4 +50,4 @@ chart = alt.Chart(topo).mark_geoshape().encode(
 #     height=300
 # )
 
-st.write(chart)
+st.altair_chart(chart)
