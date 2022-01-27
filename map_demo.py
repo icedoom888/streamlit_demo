@@ -1,7 +1,7 @@
 import streamlit as st
 import altair as alt
 import pandas as pd
-from vega_datasets import data as vd
+from vega_datasets import data
 
 
 st.title('World Population')
@@ -30,12 +30,12 @@ def load_data():
 
     return df.T
 
-data = load_data()
+df = load_data()
 countries = data.index
-year = st.slider('Pick a year', min_value=min((data.T.index.tolist())), max_value=max((data.T.index.tolist())))
-y_data = data.loc[:, year]
+year = st.slider('Pick a year', min_value=min((df.T.index.tolist())), max_value=max((df.T.index.tolist())))
+y_data = df.loc[:, year]
 
-topo = alt.topo_feature(vd.world_110m.url, 'countries')
+topo = alt.topo_feature(data.world_110m.url, 'countries')
 source = y_data
 
 chart = alt.Chart(topo).mark_geoshape().encode(
