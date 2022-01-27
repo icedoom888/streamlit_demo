@@ -15,8 +15,7 @@ data = load_data()
 countries = data.index
 
 country = st.selectbox('Select a Country', countries)
-print(country)
 
-c_data = data[country]
+c_data = data.loc[country]
 st.write(c_data)
 
